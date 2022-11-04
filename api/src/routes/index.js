@@ -1,11 +1,9 @@
-const express = require("express")
-const router = express.Router()
-const userController = require("../controllers/userController")
 const logger = require('../shared/logger')
 const { wrapAsync } = require('../shared/utils')
 
 const routes= [
-    require("./user")
+    require("./user"),
+    require("./expense")
 ]
 
 module.exports = (app) => {

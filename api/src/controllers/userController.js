@@ -1,6 +1,6 @@
 // bcrypt docs: https://github.com/kelektiv/node.bcrypt.js
 const bcrypt = require('bcrypt')
-const User = require('../models')
+const {User} = require('../models')
 const { serviceAssert } = require('../shared/utils')
 const { generateExpireJWT } = require("../shared/authUtils")
 const logger = require('../shared/logger')

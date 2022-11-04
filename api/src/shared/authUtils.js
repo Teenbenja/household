@@ -59,7 +59,7 @@ function GetBearerAuthMiddleWare() {
                 serviceAssert(req.token, 401, "Missed bearer token");
                 let account = parseJWT(req.token);
                 logger.info('jwt parse result: ', account)
-                serviceAssert(account, 401, "Invalid bearer token");
+                serviceAssert(!account.error, 401, "Invalid bearer token");
                 // serviceAssert(account.decode.household, 401, "Not from us");
                 next();
             } catch (error) {
